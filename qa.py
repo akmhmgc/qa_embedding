@@ -45,7 +45,8 @@ def create_embeddings_if_needed(qa_list, file_name="embeddings.pickle"):
 # EmbeddingしたQ&Aのリストを作成
 create_embeddings_if_needed(qa_list)
 
-# 質問に対して関係ありそうな回答を選び、OpenAI APIを使って答えるchatbot
+# 質問に対して関係ありそうな回答を選ぶ
+# TODO:　閾値以下の質問・回答を全て取り込んでGPT3で回答すると良さそう
 def chatbot(question):
     # 質問のEmbeddingを取得
     question_embedding = get_embedding(question)
